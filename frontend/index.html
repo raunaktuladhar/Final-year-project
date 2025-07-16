@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Profile Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Fake Profile Detection</h1>
+            <p>Analyze Twitter profiles using AI models</p>
+        </header>
+
+        <main>
+            <form id="profile-form" class="card" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="screen_name">Username:</label>
+                    <input type="text" id="screen_name" name="screen_name" placeholder="Enter Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Bio:</label>
+                    <textarea id="description" name="description" placeholder="Enter profile bio" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="profile-pic">Upload Profile Picture:</label>
+                    <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="followers_count">Followers Count:</label>
+                    <input type="number" id="followers_count" name="followers_count" placeholder="Enter number of followers" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="friends_count">Following Count:</label>
+                    <input type="number" id="friends_count" name="friends_count" placeholder="Enter number of following" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="statuses_count">Tweet Count:</label>
+                    <input type="number" id="statuses_count" name="statuses_count" placeholder="Enter number of tweets" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="verified">Verified Account:</label>
+                    <select id="verified" name="verified">
+                        <option value="False">No</option>
+                        <option value="True">Yes</option>
+                    </select>
+                </div>
+                <button type="submit">Analyze Profile</button>
+            </form>
+
+            <section id="result-section" class="card" style="display:none;">
+                <h2>Prediction Result</h2>
+                <p id="prediction-output">Processing...</p>
+                <canvas id="confidence-chart" width="400" height="200"></canvas>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Fake Profile Detector</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

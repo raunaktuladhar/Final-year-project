@@ -1,0 +1,167 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Container */
+.dashboard-container {
+    width: 100%;
+    max-width: 800px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #111827;
+}
+
+header p {
+    font-size: 1em;
+    color: #6b7280;
+}
+
+/* Form & Card */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1em;
+    color: #9ca3af;
+    opacity: 1; /* Fix for Firefox */
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+/* Button */
+button[type="submit"] {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+/* Result Section */
+#result-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #1f2937;
+}
+
+#prediction-output {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Text Styles */
+.real {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.fake {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.error {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.loading::after {
+    content: " ⏳";
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner */
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Chart */
+canvas {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 0.9em;
+}
