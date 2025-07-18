@@ -4,11 +4,9 @@ document.getElementById("profile-form").addEventListener("submit", async functio
     const formData = new FormData();
     formData.append("screen_name", document.getElementById("screen_name").value.trim());
     formData.append("description", document.getElementById("description").value.trim());
-    formData.append("profile-pic", document.getElementById("profile-pic").files[0]);
     formData.append("followers_count", document.getElementById("followers_count").value || 0);
     formData.append("friends_count", document.getElementById("friends_count").value || 0);
     formData.append("statuses_count", document.getElementById("statuses_count").value || 0);
-    formData.append("verified", document.getElementById("verified").value);
 
     if (!formData.get("screen_name")) {
         alert("Twitter handle is required.");
@@ -30,6 +28,10 @@ document.getElementById("profile-form").addEventListener("submit", async functio
         document.getElementById("prediction-output").innerText = 
             `Prediction: This profile is ${result.prediction.toUpperCase()} ${result.prediction === "real" ? "✅" : "❌"} (confidence: ${result.confidence.toFixed(2)}%)`;
 
+        const existingChart = Chart.getChart("confidence-chart");
+        if (existingChart) {
+            existingChart.destroy();
+        }
         const ctx = document.getElementById("confidence-chart").getContext("2d");
         new Chart(ctx, {
             type: "bar",
