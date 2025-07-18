@@ -1,0 +1,9 @@
+flask
+flask_cors
+torch
+torchvision
+torchaudio
+transformers
+pandas
+numpy
+scikit-learn
