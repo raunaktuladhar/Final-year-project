@@ -10,22 +10,18 @@
     <div class="dashboard-container">
         <header>
             <h1>Fake Profile Detection</h1>
-            <p>Analyze Twitter profiles using AI models</p>
+            <p>Analyze Twitter profiles using BERT and LSTM</p>
         </header>
 
         <main>
             <form id="profile-form" class="card" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="screen_name">Username:</label>
-                    <input type="text" id="screen_name" name="screen_name" placeholder="Enter Username" required>
+                    <label for="screen_name">Twitter Handle:</label>
+                    <input type="text" id="screen_name" name="screen_name" placeholder="Enter Twitter handle" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Bio:</label>
                     <textarea id="description" name="description" placeholder="Enter profile bio" rows="5"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="profile-pic">Upload Profile Picture:</label>
-                    <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label for="followers_count">Followers Count:</label>
@@ -38,13 +34,6 @@
                 <div class="form-group">
                     <label for="statuses_count">Tweet Count:</label>
                     <input type="number" id="statuses_count" name="statuses_count" placeholder="Enter number of tweets" min="0">
-                </div>
-                <div class="form-group">
-                    <label for="verified">Verified Account:</label>
-                    <select id="verified" name="verified">
-                        <option value="False">No</option>
-                        <option value="True">Yes</option>
-                    </select>
                 </div>
                 <button type="submit">Analyze Profile</button>
             </form>
